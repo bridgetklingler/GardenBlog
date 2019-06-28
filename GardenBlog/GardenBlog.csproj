@@ -5,10 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <Compile Remove="Migrations\20190628152306_SecondMigration.cs" />
+    <Compile Remove="Migrations\20190628152306_SecondMigration.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Views\Category\" />
     <Folder Include="Views\Post\" />
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
   <ItemGroup>

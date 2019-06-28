@@ -14,9 +14,10 @@ namespace GardenBlog
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=SiteDb;Trusted_Connection=True;";
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=GardenBlogDb;Trusted_Connection=True;";
             optionsBuilder.UseSqlServer(connectionString)
                         .UseLazyLoadingProxies();
-            base.OnConfiguring(optionsBuilder); }
+            base.OnConfiguring(optionsBuilder);
+        }
     }
 }
