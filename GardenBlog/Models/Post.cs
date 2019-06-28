@@ -12,8 +12,10 @@ namespace GardenBlog.Models
         public string Body { get; set; }
         public string Author { get; set; }
         public DateTime TimeStamp { get; set; }
+        public int PostTagId { get; set; }
 
         public virtual Category Category { get; set; }
-        public virtual List<PostTag> PostTags { get; set; }
+        public virtual PostTag PostTag { get; set; }
+
     }
 }
