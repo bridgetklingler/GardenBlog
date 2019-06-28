@@ -40,13 +40,11 @@
                 <span asp-validation-for="Author" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TimeStamp" class="control-label"></label>
-                <input asp-for="TimeStamp" class="form-control" />
+                <input asp-for="TimeStamp" type="hidden" class="form-control" value="@DateTime.Now" />
                 <span asp-validation-for="TimeStamp" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PostTagId" class="control-label"></label>
-                <input asp-for="PostTagId" class="form-control" />
+                <input asp-for="PostTagId" class="form-control" type="hidden" />
                 <span asp-validation-for="PostTagId" class="text-danger"></span>
             </div>
             <div class="form-group">

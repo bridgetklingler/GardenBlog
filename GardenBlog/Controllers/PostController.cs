@@ -21,6 +21,7 @@ namespace GardenBlog
 
         public IActionResult PostIndex()
         {
+            var model = postRepo.GetAll();
             return View();
         }
 
