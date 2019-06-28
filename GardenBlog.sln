@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GardenBlog", "GardenBlog\GardenBlog.csproj", "{F65D6539-449B-4CC8-9511-6A1DEAA62241}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GardenBlog.Tests", "GardenBlog.Tests\GardenBlog.Tests.csproj", "{13B9E673-002A-4DAB-A101-E40175AC1A4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GardenBlog.Tests", "GardenBlog.Tests\GardenBlog.Tests.csproj", "{13B9E673-002A-4DAB-A101-E40175AC1A4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

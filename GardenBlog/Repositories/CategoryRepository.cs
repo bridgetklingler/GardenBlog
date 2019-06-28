@@ -15,6 +15,19 @@ namespace GardenBlog.Repositories
             this.db = db;
         }
 
+
+        public IEnumerable<Category> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Category GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        //stretch
         public void Create(Category obj)
         {
             throw new NotImplementedException();
@@ -26,16 +39,6 @@ namespace GardenBlog.Repositories
         }
 
         public void Edit(Category obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Category> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Category GetById(int id)
         {
             throw new NotImplementedException();
         }

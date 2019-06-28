@@ -15,19 +15,22 @@ namespace GardenBlog.Repositories
             this.db = db;
         }
 
-        public void Create(Post obj)
+        public void Create(Post post)
         {
-            throw new NotImplementedException();
+            db.Posts.Add(post);
+            db.SaveChanges();
         }
 
-        public void Delete(Post obj)
+        public void Delete(Post post)
         {
-            throw new NotImplementedException();
+            db.Posts.Remove(post);
+            db.SaveChanges();
         }
 
-        public void Edit(Post obj)
+        public void Edit(Post post)
         {
-            throw new NotImplementedException();
+            db.Posts.Update(post);
+            db.SaveChanges();
         }
 
         public IEnumerable<Post> GetAll()
@@ -37,7 +40,7 @@ namespace GardenBlog.Repositories
 
         public Post GetById(int id)
         {
-            throw new NotImplementedException();
+            return db.Posts.Single(p => p.PostId == id);
         }
     }
 }
