@@ -1,8 +1,21 @@
 ﻿@model IEnumerable<GardenBlog.Models.Post>
 @{
-    ViewData["Title"] = "Index";
-    Layout = "_layout";
+    Layout = null;
 }
-
-<h2>PostIndex</h2>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name=“viewport” content=“width =device-width” />
+    <title>B&B Garden Blog</title>
+</head>
+<body>
+    @foreach (var post in Model)
+    {
+        <h3>@post.Title</h3>
+        <span>@post.Author.</span>
+        <span>@post.Category.</span>
+        <span>@post.TimeStamp</span>
+        <p>@post.Body</p>
+    }
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<GardenBlog.Models.Category>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Post Categories</title>
+</head>
+<body>
+    @foreach (var item in Model)
+    {
+        <h3>item.CategoryName</h3>
+
+    }
+</body>
+</html>
