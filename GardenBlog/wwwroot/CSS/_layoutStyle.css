@@ -1,0 +1,54 @@
+﻿* {
+    background-color: rgb(165, 187, 171);
+}
+
+body {
+    background-image: url("/Images/white-lilies.png");
+    background-size: cover;
+    min-height: 800px;
+}
+
+footer, i {
+    background-color: rgb(3, 48, 16);
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    padding: .5em;
+}
+
+nav {
+    background-color: rgb(3, 48, 16);
+    width: 100%;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    text-decoration: none;
+}
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        font-size: 15px;
+        list-style: none;
+        background-color: rgb(3, 48, 16);
+        text-decoration: none;
+        padding: 0;
+        margin: 0;
+    }
+
+.navbutton, .createblog {
+    background: linear-gradient(to top right, rgb(3, 48, 16), rgb(59, 138, 81));
+    border: none;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 13px 20px;
+}
+

@@ -4,14 +4,16 @@ using GardenBlog;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GardenBlog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    partial class BlogContextModelSnapshot : ModelSnapshot
+    [Migration("20190628195400_SwitchedPostTagReverse")]
+    partial class SwitchedPostTagReverse
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,12 +55,6 @@ namespace GardenBlog.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Posts");
-
-                    b.HasData(
-                        new { PostId = 1, Author = "Blair", Body = "This was so scary, it's scary", TimeStamp = new DateTime(2019, 6, 28, 16, 45, 38, 209, DateTimeKind.Local), Title = "Horror" },
-                        new { PostId = 2, Author = "Bridget", Body = "Soooo funny", TimeStamp = new DateTime(2019, 6, 28, 16, 45, 38, 210, DateTimeKind.Local), Title = "Comedy" },
-                        new { PostId = 3, Author = "Travis", Body = "Kinda Creepy", TimeStamp = new DateTime(2019, 6, 28, 16, 45, 38, 210, DateTimeKind.Local), Title = "Horror" }
-                    );
                 });
 
             modelBuilder.Entity("GardenBlog.Models.PostTag", b =>
@@ -78,12 +74,6 @@ namespace GardenBlog.Migrations
                     b.HasIndex("TagId");
 
                     b.ToTable("PostTags");
-
-                    b.HasData(
-                        new { PostTagID = 1, PostId = 1, TagId = 2 },
-                        new { PostTagID = 2, PostId = 2, TagId = 1 },
-                        new { PostTagID = 3, PostId = 3, TagId = 2 }
-                    );
                 });
 
             modelBuilder.Entity("GardenBlog.Models.Tag", b =>
@@ -97,11 +87,6 @@ namespace GardenBlog.Migrations
                     b.HasKey("TagId");
 
                     b.ToTable("Tags");
-
-                    b.HasData(
-                        new { TagId = 1, TagName = "funny" },
-                        new { TagId = 2, TagName = "scary" }
-                    );
                 });
 
             modelBuilder.Entity("GardenBlog.Models.Post", b =>

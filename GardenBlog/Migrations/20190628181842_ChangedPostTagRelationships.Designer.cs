@@ -4,14 +4,16 @@ using GardenBlog;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GardenBlog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    partial class BlogContextModelSnapshot : ModelSnapshot
+    [Migration("20190628181842_ChangedPostTagRelationships")]
+    partial class ChangedPostTagRelationships
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,6 +46,8 @@ namespace GardenBlog.Migrations
 
                     b.Property<int?>("CategoryId");
 
+                    b.Property<int>("PostTagId");
+
                     b.Property<DateTime>("TimeStamp");
 
                     b.Property<string>("Title");
@@ -52,13 +56,9 @@ namespace GardenBlog.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Posts");
+                    b.HasIndex("PostTagId");
 
-                    b.HasData(
-                        new { PostId = 1, Author = "Blair", Body = "This was so scary, it's scary", TimeStamp = new DateTime(2019, 6, 28, 16, 45, 38, 209, DateTimeKind.Local), Title = "Horror" },
-                        new { PostId = 2, Author = "Bridget", Body = "Soooo funny", TimeStamp = new DateTime(2019, 6, 28, 16, 45, 38, 210, DateTimeKind.Local), Title = "Comedy" },
-                        new { PostId = 3, Author = "Travis", Body = "Kinda Creepy", TimeStamp = new DateTime(2019, 6, 28, 16, 45, 38, 210, DateTimeKind.Local), Title = "Horror" }
-                    );
+                    b.ToTable("Posts");
                 });
 
             modelBuilder.Entity("GardenBlog.Models.PostTag", b =>
@@ -67,23 +67,9 @@ namespace GardenBlog.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("PostId");
-
-                    b.Property<int>("TagId");
-
                     b.HasKey("PostTagID");
 
-                    b.HasIndex("PostId");
-
-                    b.HasIndex("TagId");
-
                     b.ToTable("PostTags");
-
-                    b.HasData(
-                        new { PostTagID = 1, PostId = 1, TagId = 2 },
-                        new { PostTagID = 2, PostId = 2, TagId = 1 },
-                        new { PostTagID = 3, PostId = 3, TagId = 2 }
-                    );
                 });
 
             modelBuilder.Entity("GardenBlog.Models.Tag", b =>
@@ -92,16 +78,15 @@ namespace GardenBlog.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("PostTagId");
+
                     b.Property<string>("TagName");
 
                     b.HasKey("TagId");
 
-                    b.ToTable("Tags");
+                    b.HasIndex("PostTagId");
 
-                    b.HasData(
-                        new { TagId = 1, TagName = "funny" },
-                        new { TagId = 2, TagName = "scary" }
-                    );
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("GardenBlog.Models.Post", b =>
@@ -109,18 +94,18 @@ namespace GardenBlog.Migrations
                     b.HasOne("GardenBlog.Models.Category", "Category")
                         .WithMany("PostList")
                         .HasForeignKey("CategoryId");
+
+                    b.HasOne("GardenBlog.Models.PostTag", "PostTag")
+                        .WithMany("PostList")
+                        .HasForeignKey("PostTagId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("GardenBlog.Models.PostTag", b =>
+            modelBuilder.Entity("GardenBlog.Models.Tag", b =>
                 {
-                    b.HasOne("GardenBlog.Models.Post", "Post")
-                        .WithMany("PostTagList")
-                        .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("GardenBlog.Models.Tag", "Tag")
-                        .WithMany("PostTagList")
-                        .HasForeignKey("TagId")
+                    b.HasOne("GardenBlog.Models.PostTag", "PostTag")
+                        .WithMany("TagList")
+                        .HasForeignKey("PostTagId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

@@ -19,12 +19,8 @@ namespace GardenBlog
             this.postRepo = postRepo;
         }
 
-        public IActionResult PostIndex()
-        {
-            return View();
-        }
 
-        public ViewResult AllPosts()
+        public ViewResult Index()
         {
             var model = postRepo.GetAll();
 
@@ -34,13 +30,6 @@ namespace GardenBlog
         public ViewResult Details(int id)
         {
             var model = postRepo.GetById(id);
-
-            return View(model);
-        }
-
-        public ViewResult Index(int Id)
-        {
-            var model = postRepo.GetById(Id);
 
             return View(model);
         }

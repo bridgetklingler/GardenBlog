@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using GardenBlog.Models;
+using GardenBlog.Controllers;
+using GardenBlog.Repositories;
 
 namespace GardenBlog
 {
@@ -17,6 +20,10 @@ namespace GardenBlog
         {
             services.AddMvc();
             services.AddDbContext<BlogContext>();
+            services.AddScoped<IRepository<Post>, PostRepository>();
+            services.AddScoped<IRepository<Tag>, TagRepository>();
+            services.AddScoped<IRepository<Category>, CategoryRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

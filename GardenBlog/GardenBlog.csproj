@@ -11,8 +11,8 @@
 
   <ItemGroup>
     <Folder Include="Views\Category\" />
-    <Folder Include="Views\Post\" />
     <Folder Include="wwwroot\Images\" />
+
   </ItemGroup>
 
   <ItemGroup>

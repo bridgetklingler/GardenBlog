@@ -1,16 +1,32 @@
-﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
+
     <meta name="viewport" content="width=device-width" />
-    <title>_layout</title>
+    <title>B&B Garden Blod</title>
+    <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' />
+    <link href="~/CSS/_layoutStyle.css" rel="stylesheet"/>
+    @RenderSection("styles", false)
 </head>
+<header>
+    <nav>
+        <ul>
+            <a href="/post/PostIndex"><li class="navbutton">Home</li></a>
+            @*<a href="/category/Indoor"><li class="navbutton">Indoor Posts</li></a>
+        <a href="/category/Outdoor"><li class="navbutton">Outdoor Posts</li></a>*@
+            <a href="/post/Index"><li class="navbutton">All Blogs</li></a>
+
+
+
+        </ul>
+    </nav>
+</header>
 <body>
     @RenderBody()
+
 </body>
+<footer>
+    <i>B&B Garden Blog &copy;2019</i>
+</footer>
 </html>

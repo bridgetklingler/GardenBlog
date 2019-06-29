@@ -17,13 +17,14 @@ namespace GardenBlog.Controllers
             this.catRepos = catRepos;
         }
 
-        public ViewResult CatIndex()
+        public ViewResult CategoryIndex()
         {
             var model = catRepos.GetAll();
             return View(model);
         }
 
-        public ActionResult SingleCategory(int id)
+
+        public ViewResult SingleCategory(int id)
         {
             var model = catRepos.GetById(id);
             return View(model);

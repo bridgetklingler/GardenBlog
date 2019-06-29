@@ -21,5 +21,70 @@ namespace GardenBlog
                         .UseLazyLoadingProxies();
             base.OnConfiguring(optionsBuilder);
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Post>().HasData(
+                new Post
+                {
+                    PostId = 1,
+                    Author = "Blair",
+                    Title = "Horror",
+                    Body = "This was so scary, it's scary",
+                    TimeStamp = DateTime.Now,
+                },
+                
+                new Post
+                {
+                    PostId = 2,
+                    Author = "Bridget",
+                    Title = "Comedy",
+                    Body = "Soooo funny",
+                    TimeStamp = DateTime.Now,
+                },
+
+                new Post
+                {
+                    PostId = 3,
+                    Author = "Travis",
+                    Title = "Horror",
+                    Body = "Kinda Creepy",
+                    TimeStamp = DateTime.Now,
+                });
+
+            modelBuilder.Entity<Tag>().HasData(
+                new Tag
+                {
+                    TagId = 1,
+                    TagName = "funny",
+                },
+
+                new Tag
+                {
+                    TagId = 2,
+                    TagName = "scary"
+                });
+
+            modelBuilder.Entity<PostTag>().HasData(
+                new PostTag
+                {
+                    PostTagID = 1,
+                    PostId = 1,
+                    TagId = 2
+                },
+                new PostTag
+                {
+                    PostTagID = 2,
+                    PostId = 2,
+                    TagId = 1
+                },
+                new PostTag
+                {
+                    PostTagID = 3,
+                    PostId = 3,
+                    TagId = 2
+                });
+
+        }
     }
 }
