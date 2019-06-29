@@ -4,7 +4,7 @@
 
 body {
     background-image: url("/Images/white-lilies.png");
-    background-size: contain;
+    background-size: cover;
     min-height: 800px;
 }
 
@@ -19,31 +19,35 @@ footer{
     position: fixed;
     bottom: 0px;
     left: 0px;
-    padding: 1em;
+    padding: .5em;
 }
 
 nav {
     background-color: rgb(3, 48, 16);
-    padding: 1em;
     width: 100%;
     left: 0px;
     position: fixed;
+    top: 0px;
+    text-decoration: none;
 }
 
-nav ul{
-    display: flex;
-    justify-content: space-around;
-    font-size: 15px;
-    color: white;
-    list-style: none;
-    background-color: rgb(3, 48, 16);
-}
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        font-size: 15px;
+        list-style: none;
+        background-color: rgb(3, 48, 16);
+        text-decoration: none;
+        padding: 0;
+        margin: 0;
+    }
 
-.navbutton{
-    background: linear-gradient(to top, rgb(e, 48, 16), lightgreen);
+.navbutton {
+    background: linear-gradient(to top right, rgb(3, 48, 16), rgb(59, 138, 81));
     border: none;
     color: white;
+    display: inline-block;
     text-align: center;
     text-decoration: none;
-    background-color: rgb(3, 48, 16);
+    padding: 13px 20px;
 }
