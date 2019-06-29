@@ -14,19 +14,12 @@
 <body>
 
 <div>
-    <h4>Category</h4>
+    <h4>@Model.CategoryName</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CategoryName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CategoryName)
-        </dd>
-    </dl>
 </div>
+    <a href="/Post/Create/@Model.CategoryId" class="createblog">Write New Post For @Model.CategoryName</a>
 <div>
-    <a asp-action="Index">Back to Category Selection</a>
+    <a href="/Category/Index">Back to Category Selection</a>
 </div>
 </body>
 </html>

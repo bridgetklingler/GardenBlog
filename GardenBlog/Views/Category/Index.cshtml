@@ -13,8 +13,7 @@
 <body>
     @foreach (var item in Model)
     {
-        <h3>item.CategoryName</h3>
-
+        <a href="/Category/Details/@item.CategoryId"><h3>@item.CategoryName</h3></a>
     }
 </body>
 </html>

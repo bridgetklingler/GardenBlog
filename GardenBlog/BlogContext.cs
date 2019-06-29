@@ -85,6 +85,18 @@ namespace GardenBlog
                     TagId = 2
                 });
 
+            modelBuilder.Entity<Category>().HasData(
+                new Category
+                {
+                    CategoryId = 1,
+                    CategoryName = "Indoor"
+                },
+
+                new Category
+                {
+                    CategoryId = 2,
+                    CategoryName = "Outdoor"
+                });
         }
     }
 }

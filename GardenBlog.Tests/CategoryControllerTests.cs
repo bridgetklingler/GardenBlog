@@ -22,7 +22,7 @@ namespace GardenBlog.Tests
         [Fact]
         public void CatIndex_Returns_A_View()
         {
-            var result = underTest.CategoryIndex();
+            var result = underTest.Index();
 
             Assert.IsType<ViewResult>(result);
         }
@@ -33,7 +33,7 @@ namespace GardenBlog.Tests
             var expectedCategory = new Category();
             catRepos.GetById(1).Returns(expectedCategory);
 
-            var result = underTest.SingleCategory(1);
+            var result = underTest.Details(1);
 
             Assert.Equal(expectedCategory, result.Model);
         }

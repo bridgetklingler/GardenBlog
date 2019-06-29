@@ -18,12 +18,12 @@ namespace GardenBlog.Repositories
 
         public IEnumerable<Category> GetAll()
         {
-            throw new NotImplementedException();
+            return db.Categories;
         }
 
         public Category GetById(int id)
         {
-            throw new NotImplementedException();
+            return db.Categories.Single(c => c.CategoryId == id);
         }
 
 
