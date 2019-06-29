@@ -52,3 +52,9 @@ nav ul {
     padding: 13px 20px;
 }
 
+    .navbutton:hover, .createblog:hover {
+        background: rgb(211, 198, 174);
+        color: black;
+        border: 2px solid rgb(3, 48, 16);
+    }
+

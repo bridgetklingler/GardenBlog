@@ -1,19 +1,11 @@
 ﻿@model IEnumerable<GardenBlog.Models.Category>
 @{
+    ViewData["Title"] = "Post Categories";
+
     Layout = "_layout";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Post Categories</title>
-</head>
-<body>
-    @foreach (var item in Model)
-    {
-        <a href="/Category/Details/@item.CategoryId"><h3>@item.CategoryName</h3></a>
-    }
-</body>
-</html>
+@foreach (var item in Model)
+{
+    <a href="/Category/Details/@item.CategoryId"><h3>@item.CategoryName</h3></a>
+}

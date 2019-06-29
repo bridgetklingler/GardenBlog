@@ -2,13 +2,8 @@
 @{
     Layout = "_layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name=“viewport” content=“width =device-width” />
-    <title>B&B Garden Blog</title>
-</head>
-<body>
+
+
     @foreach (var post in Model)
     {
     <div>
@@ -19,5 +14,3 @@
         <p>@post.Body</p>
     </div>
     }
-</body>
-</html>

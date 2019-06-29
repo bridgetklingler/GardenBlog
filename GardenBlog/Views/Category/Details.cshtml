@@ -1,36 +1,28 @@
 ﻿@model GardenBlog.Models.Category
 
 @{
+    ViewData["Title"] = "Details";
+
     Layout = "_layout";
 }
 
-<!DOCTYPE html>
+<div>
+    <h4>@Model.CategoryName</h4>
+    <hr />
+</div>
+<a href="/Post/Create/@Model.CategoryId" class="createblog">Write New Post For @Model.CategoryName</a>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-
+@foreach (var post in Model.PostList)
+{
     <div>
-        <h4>@Model.CategoryName</h4>
-        <hr />
+        <h3>@post.Title</h3>
+        <span>@post.Author.</span>
+        <span>@post.Category.</span>
+        <span>@post.TimeStamp</span>
+        <p>@post.Body</p>
     </div>
-    <a href="/Post/Create/@Model.CategoryId" class="createblog">Write New Post For @Model.CategoryName</a>
+}
+<div>
+    <a href="/Category/Index">Back to Category Selection</a>
+</div>
 
-    @foreach (var post in Model.PostList)
-    {
-        <div>
-            <h3>@post.Title</h3>
-            <span>@post.Author.</span>
-            <span>@post.Category.</span>
-            <span>@post.TimeStamp</span>
-            <p>@post.Body</p>
-        </div>
-    }
-    <div>
-        <a href="/Category/Index">Back to Category Selection</a>
-    </div>
-</body>
-</html>
