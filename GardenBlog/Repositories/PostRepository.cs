@@ -35,7 +35,7 @@ namespace GardenBlog.Repositories
 
         public IEnumerable<Post> GetAll()
         {
-            throw new NotImplementedException();
+            return db.Posts;
         }
 
         public Post GetById(int id)
