@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<GardenBlog.Models.Post>
 @{
-    Layout = null;
+    Layout = "_layout";
 }
 <!DOCTYPE html>
 <html>
@@ -11,11 +11,13 @@
 <body>
     @foreach (var post in Model)
     {
+    <div>
         <h3>@post.Title</h3>
         <span>@post.Author.</span>
         <span>@post.Category.</span>
         <span>@post.TimeStamp</span>
         <p>@post.Body</p>
+    </div>
     }
 </body>
 </html>
