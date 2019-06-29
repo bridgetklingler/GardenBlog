@@ -19,6 +19,7 @@ namespace GardenBlog
             this.postRepo = postRepo;
         }
 
+
         public ViewResult Index()
         {
             var model = postRepo.GetAll();
