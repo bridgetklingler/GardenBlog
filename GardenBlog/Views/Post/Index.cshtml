@@ -6,11 +6,11 @@
 
     @foreach (var post in Model)
     {
-    <div>
-        <h3>@post.Title</h3>
-        <span>@post.Author.</span>
-        <span>@post.Category.</span>
-        <span>@post.TimeStamp</span>
-        <p>@post.Body</p>
-    </div>
+<div id="index">
+    <h3>@post.Title</h3>
+    <span>@post.Category.</span>
+    <span>@post.Author.</span>
+    <span>@post.TimeStamp</span>
+    <p>@post.Body</p>
+</div>
     }

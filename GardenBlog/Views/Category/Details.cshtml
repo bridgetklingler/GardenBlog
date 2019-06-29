@@ -6,23 +6,25 @@
     Layout = "_layout";
 }
 
-<div>
-    <h4>@Model.CategoryName</h4>
-    <hr />
-</div>
-<a href="/Post/Create/@Model.CategoryId" class="createblog">Write New Post For @Model.CategoryName</a>
-
-@foreach (var post in Model.PostList)
-{
     <div>
-        <h3>@post.Title</h3>
-        <span>@post.Author.</span>
-        <span>@post.Category.</span>
-        <span>@post.TimeStamp</span>
-        <p>@post.Body</p>
+        <h4>@Model.CategoryName</h4>
+        <hr />
     </div>
-}
-<div>
-    <a href="/Category/Index">Back to Category Selection</a>
-</div>
+    <a href="/Post/Create/@Model.CategoryId" class="createblog">Write New Post For @Model.CategoryName</a>
+
+    <div id="index">
+        @foreach (var post in Model.PostList)
+        {
+            <div>
+                <h3>@post.Title</h3>
+                <span>@post.Author.</span>
+                <span>@post.Category.</span>
+                <span>@post.TimeStamp</span>
+                <p>@post.Body</p>
+            </div>
+        }
+    </div>
+    <div id="button">
+        <a href="/Category/Index">Back to Category Selection</a>
+    </div>
 

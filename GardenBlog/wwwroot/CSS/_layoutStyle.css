@@ -42,7 +42,7 @@ nav ul {
     margin: 0;
 }
 
-.navbutton, .createblog {
+.navbutton, .createblog{
     background: linear-gradient(to top right, rgb(3, 48, 16), rgb(59, 138, 81));
     border: none;
     color: white;
@@ -52,9 +52,39 @@ nav ul {
     padding: 13px 20px;
 }
 
-    .navbutton:hover, .createblog:hover {
-        background: rgb(211, 198, 174);
-        color: black;
-        border: 2px solid rgb(3, 48, 16);
-    }
+.navbutton:hover, .createblog:hover {
+    background: rgb(211, 198, 174);
+    color: black;
+    border: 2px solid rgb(3, 48, 16);
+}
+
+#category{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: 3em auto;
+    opacity: .83;
+    background-color:antiquewhite;
+}
+
+#category a {
+    color: black;
+    text-decoration: none;
+    padding: 5em;
+    background-color: antiquewhite
+}
+
+
+#index, #createposts{
+    width: 80vw;
+    margin: 4em auto;
+    opacity: .87;
+    background-color: antiquewhite;
+}
+
+#index h3, span, p{
+    color: black;
+    background-color: antiquewhite;
+}
+
 
