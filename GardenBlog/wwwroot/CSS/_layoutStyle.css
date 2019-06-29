@@ -1,0 +1,49 @@
+﻿* {
+    background-color: rgb(165, 187, 171);
+}
+
+body {
+    background-image: url("/Images/white-lilies.png");
+    background-size: contain;
+    min-height: 800px;
+}
+
+footer, i {
+    background-color: rgb(3, 48, 16);
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    padding: 1em;
+}
+
+nav {
+    background-color: rgb(3, 48, 16);
+    padding: 1em;
+    width: 100%;
+    left: 0px;
+    position: fixed;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+    color: white;
+    list-style: none;
+    background-color: rgb(3, 48, 16);
+}
+
+.navbutton{
+    background: linear-gradient(to top, rgb(e, 48, 16), lightgreen);
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(3, 48, 16);
+}
