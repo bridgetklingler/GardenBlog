@@ -42,7 +42,7 @@ nav {
         margin: 0;
     }
 
-.navbutton {
+.navbutton, .createblog {
     background: linear-gradient(to top right, rgb(3, 48, 16), rgb(59, 138, 81));
     border: none;
     color: white;
@@ -51,3 +51,4 @@ nav {
     text-decoration: none;
     padding: 13px 20px;
 }
+
