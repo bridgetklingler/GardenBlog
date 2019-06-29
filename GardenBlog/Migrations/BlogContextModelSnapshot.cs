@@ -47,7 +47,7 @@ namespace GardenBlog.Migrations
 
                     b.Property<string>("Body");
 
-                    b.Property<int?>("CategoryId");
+                    b.Property<int>("CategoryId");
 
                     b.Property<DateTime>("TimeStamp");
 
@@ -60,9 +60,9 @@ namespace GardenBlog.Migrations
                     b.ToTable("Posts");
 
                     b.HasData(
-                        new { PostId = 1, Author = "Blair", Body = "This was so scary, it's scary", TimeStamp = new DateTime(2019, 6, 29, 14, 59, 11, 624, DateTimeKind.Local), Title = "Horror" },
-                        new { PostId = 2, Author = "Bridget", Body = "Soooo funny", TimeStamp = new DateTime(2019, 6, 29, 14, 59, 11, 625, DateTimeKind.Local), Title = "Comedy" },
-                        new { PostId = 3, Author = "Travis", Body = "Kinda Creepy", TimeStamp = new DateTime(2019, 6, 29, 14, 59, 11, 625, DateTimeKind.Local), Title = "Horror" }
+                        new { PostId = 1, Author = "Blair", Body = "This was so scary, it's scary", CategoryId = 1, TimeStamp = new DateTime(2019, 6, 29, 16, 44, 5, 38, DateTimeKind.Local), Title = "Horror" },
+                        new { PostId = 2, Author = "Bridget", Body = "Soooo funny", CategoryId = 1, TimeStamp = new DateTime(2019, 6, 29, 16, 44, 5, 39, DateTimeKind.Local), Title = "Comedy" },
+                        new { PostId = 3, Author = "Travis", Body = "Kinda Creepy", CategoryId = 2, TimeStamp = new DateTime(2019, 6, 29, 16, 44, 5, 39, DateTimeKind.Local), Title = "Horror" }
                     );
                 });
 
@@ -113,7 +113,8 @@ namespace GardenBlog.Migrations
                 {
                     b.HasOne("GardenBlog.Models.Category", "Category")
                         .WithMany("PostList")
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("GardenBlog.Models.PostTag", b =>

@@ -28,6 +28,7 @@ namespace GardenBlog
                 new Post
                 {
                     PostId = 1,
+                    CategoryId = 1,
                     Author = "Blair",
                     Title = "Horror",
                     Body = "This was so scary, it's scary",
@@ -37,6 +38,7 @@ namespace GardenBlog
                 new Post
                 {
                     PostId = 2,
+                    CategoryId = 1,
                     Author = "Bridget",
                     Title = "Comedy",
                     Body = "Soooo funny",
@@ -46,6 +48,7 @@ namespace GardenBlog
                 new Post
                 {
                     PostId = 3,
+                    CategoryId = 2,
                     Author = "Travis",
                     Title = "Horror",
                     Body = "Kinda Creepy",
