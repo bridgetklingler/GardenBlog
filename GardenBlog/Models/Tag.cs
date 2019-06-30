@@ -9,7 +9,8 @@ namespace GardenBlog.Models
     {
         public int TagId { get; set; }
         public string TagName { get; set; }
+        
 
-        public virtual List<PostTag> PostTagList { get; set; }
+        public virtual List<PostTag> PostTags { get; set; }
     }
 }

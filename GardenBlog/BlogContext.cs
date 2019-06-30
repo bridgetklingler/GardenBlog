@@ -24,6 +24,9 @@ namespace GardenBlog
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<PostTag>()
+                .HasKey(x => new { x.PostId, x.TagId });
+
             modelBuilder.Entity<Post>().HasData(
                 new Post
                 {
@@ -71,19 +74,16 @@ namespace GardenBlog
             modelBuilder.Entity<PostTag>().HasData(
                 new PostTag
                 {
-                    PostTagID = 1,
                     PostId = 1,
                     TagId = 2
                 },
                 new PostTag
                 {
-                    PostTagID = 2,
                     PostId = 2,
                     TagId = 1
                 },
                 new PostTag
                 {
-                    PostTagID = 3,
                     PostId = 3,
                     TagId = 2
                 });

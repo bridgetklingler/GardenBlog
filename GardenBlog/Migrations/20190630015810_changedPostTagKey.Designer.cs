@@ -4,14 +4,16 @@ using GardenBlog;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GardenBlog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    partial class BlogContextModelSnapshot : ModelSnapshot
+    [Migration("20190630015810_changedPostTagKey")]
+    partial class changedPostTagKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,8 +51,6 @@ namespace GardenBlog.Migrations
 
                     b.Property<int>("CategoryId");
 
-                    b.Property<int?>("TagId");
-
                     b.Property<DateTime>("TimeStamp");
 
                     b.Property<string>("Title");
@@ -59,14 +59,12 @@ namespace GardenBlog.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("TagId");
-
                     b.ToTable("Posts");
 
                     b.HasData(
-                        new { PostId = 1, Author = "Blair", Body = "This was so scary, it's scary", CategoryId = 1, TimeStamp = new DateTime(2019, 6, 29, 22, 23, 51, 587, DateTimeKind.Local), Title = "Horror" },
-                        new { PostId = 2, Author = "Bridget", Body = "Soooo funny", CategoryId = 1, TimeStamp = new DateTime(2019, 6, 29, 22, 23, 51, 588, DateTimeKind.Local), Title = "Comedy" },
-                        new { PostId = 3, Author = "Travis", Body = "Kinda Creepy", CategoryId = 2, TimeStamp = new DateTime(2019, 6, 29, 22, 23, 51, 588, DateTimeKind.Local), Title = "Horror" }
+                        new { PostId = 1, Author = "Blair", Body = "This was so scary, it's scary", CategoryId = 1, TimeStamp = new DateTime(2019, 6, 29, 21, 58, 10, 95, DateTimeKind.Local), Title = "Horror" },
+                        new { PostId = 2, Author = "Bridget", Body = "Soooo funny", CategoryId = 1, TimeStamp = new DateTime(2019, 6, 29, 21, 58, 10, 96, DateTimeKind.Local), Title = "Comedy" },
+                        new { PostId = 3, Author = "Travis", Body = "Kinda Creepy", CategoryId = 2, TimeStamp = new DateTime(2019, 6, 29, 21, 58, 10, 96, DateTimeKind.Local), Title = "Horror" }
                     );
                 });
 
@@ -113,10 +111,6 @@ namespace GardenBlog.Migrations
                         .WithMany("PostList")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("GardenBlog.Models.Tag", "Tag")
-                        .WithMany()
-                        .HasForeignKey("TagId");
                 });
 
             modelBuilder.Entity("GardenBlog.Models.PostTag", b =>
@@ -127,7 +121,7 @@ namespace GardenBlog.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("GardenBlog.Models.Tag", "Tag")
-                        .WithMany("PostTags")
+                        .WithMany("PostTagList")
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

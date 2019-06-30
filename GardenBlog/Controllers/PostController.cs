@@ -38,8 +38,8 @@ namespace GardenBlog
         [HttpGet]
         public ViewResult Create(int id)
         {
-            ViewBag.PostId = id;
-
+            ViewBag.CategoryId = id;
+            
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace GardenBlog
         {
             postRepo.Create(post);
 
-            return RedirectToAction("../Review/Index/" + post.PostId);
+            return RedirectToAction("../Category/Index/" + post.CategoryId);
         }
 
 
