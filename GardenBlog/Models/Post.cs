@@ -15,6 +15,7 @@ namespace GardenBlog.Models
 
         public virtual Category Category { get; set; }
         public virtual Tag Tag { get; set; }
+        public virtual int TagId {get;set;}
         public virtual int CategoryId { get; set; }
 
         public virtual List<PostTag> PostTagList { get; set; }
