@@ -7,15 +7,8 @@
 <h2>AddTags</h2>
 
 <div>
-    @foreach (var item in Model)
-    {
-        
-        <div class="form-group">
-            <input type="submit" value="@item.TagName" class="btn btn-default" />
-        </div>
-        <div class="form-group">
-            <input type="hidden" value="@ViewBag.PostId" />
-        </div>
-    }
+ 
+        @*@Html.DropDownList("Tags",(@Model),new
+        { onchange="document.location.href='/Post/Index?value='+this.value"})*@
 </div>
 
