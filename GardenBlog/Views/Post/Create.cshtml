@@ -5,6 +5,8 @@
 
     Layout = "_layout";
 }
+@addTagHelper * ,Microsoft.AspNetCore.Mvc.TagHelpers
+
 
 <h4>Create Blog</h4>
 <hr />
@@ -12,38 +14,38 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Title" class="control-label">Title:</label>
-                    <input asp-for="Title" class="form-control" />
-                    <span asp-validation-for="Title" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Author" class="control-label">Author:</label>
-                    <input asp-for="Author" class="form-control" />
-                    <span asp-validation-for="Author" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Body" class="control-label">Post Content:</label>
-                    <br />
-                    <textarea asp-for="Body" class="form-control" style="width: 300px; height: 150px;">
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Title:</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label">Author:</label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Body" class="control-label">Post Content:</label>
+                <br />
+                <textarea asp-for="Body" class="form-control" style="width: 300px; height: 150px;">
                     </textarea>
-                    <span asp-validation-for="Body" class="text-danger"></span>
+                <span asp-validation-for="Body" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <input asp-for="TimeStamp" type="hidden" class="form-control" value="@DateTime.Now" />
+                    <span asp-validation-for="TimeStamp" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <div class="form-group">
-                        <input asp-for="TimeStamp" type="hidden" class="form-control" value="@DateTime.Now" />
-                        <span asp-validation-for="TimeStamp" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        
-                    </div>
-                    <div class="form-group">
-                        <input asp-for="CategoryId" class="form-control" type="hidden" value="@ViewBag.CategoryId" />
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-default" />
-                    </div>
+
                 </div>
+                <div class="form-group">
+                    <input asp-for="CategoryId" class="form-control" type="hidden" value="@ViewBag.CategoryId" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
         </form>
     </div>
 </div>

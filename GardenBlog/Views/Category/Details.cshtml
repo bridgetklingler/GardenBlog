@@ -22,16 +22,19 @@
                 <p>@post.Body</p>
                 <br />
             </div>
-            <div id="button">
-                <a href="/Post/Edit/@post.PostId">Edit</a>
+            
+            <div class="multibutton">
+                <div>
+                    <a href="/Post/Edit/@post.PostId" class="button">Edit</a>
+                </div>
+                <div>
+                    <a href="/Post/Delete/@post.PostId" class="button">Delete</a>
+                </div>
+                <br />
             </div>
-            <div id="button">
-                <a href="/Post/Delete/@post.PostId">Delete</a>
-            </div>
-            <br />
         }
     </div>
-    <div id="button">
-        <a href="/Category/Index">Back to Category Selection</a>
+    <div>
+        <a href="/Category/Index" class="button">Back to Category Selection</a>
     </div>
 

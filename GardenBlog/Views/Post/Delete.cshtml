@@ -5,6 +5,8 @@
 
     Layout = "_layout";
 }
+@addTagHelper * ,Microsoft.AspNetCore.Mvc.TagHelpers
+
 
 <h3>Are you sure you want to delete this blog?</h3>
 <div>
@@ -36,16 +38,16 @@
             @Html.DisplayFor(model => model.TimeStamp)
         </dd>
         @*<dt>
-            @Html.DisplayNameFor(model => model.PostTag)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PostTag.PostTagID)
-        </dd>*@
+                @Html.DisplayNameFor(model => model.PostTag)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PostTag.PostTagID)
+            </dd>*@
     </dl>
     <div class="form-group">
         <input asp-for="PostId" type="hidden" value="@ViewBag.PostId" class="form-control" />
     </div>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="PostId" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
