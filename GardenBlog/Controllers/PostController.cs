@@ -48,31 +48,12 @@ namespace GardenBlog
         {
             postRepo.Create(post);
 
-            return RedirectToAction("../Category/Index/" + post.CategoryId);
+            return RedirectToAction("../Tag/AddTags/" + post.PostId);
         }
 
 
         [HttpGet]
         public ViewResult Delete(int id)
-        {
-            var model = postRepo.GetById(id);
-
-            return View(model);
-        }
-
-        [HttpPost]
-        public ActionResult Delete(Post post)
-        {
-            int pid = post.PostId;
-
-            postRepo.Delete(post);
-
-            return RedirectToAction("../Review/Index/" + pid);
-        }
-
-
-        [HttpGet]
-        public ViewResult Edit(int id)
         {
             ViewBag.PostId = id;
 
@@ -82,13 +63,27 @@ namespace GardenBlog
         }
 
         [HttpPost]
+        public ActionResult Delete(Post post)
+        {
+            postRepo.Delete(post);
+
+            return RedirectToAction("../Category/Index/");
+        }
+
+
+        [HttpGet]
+        public ViewResult Edit(int id)
+        {
+            var model = postRepo.GetById(id);
+            return View(model);
+        }
+
+        [HttpPost]
         public ActionResult Edit(Post post)
         {
-            int pid = post.PostId;
-
             postRepo.Edit(post);
 
-            return RedirectToAction("../Review/Index/" + pid);
+            return RedirectToAction("../Category/Details/" +post.CategoryId);
         }
     }
 }

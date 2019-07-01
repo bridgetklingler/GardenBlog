@@ -17,7 +17,7 @@ namespace GardenBlog.Repositories
 
         public IEnumerable<Tag> GetAll()
         {
-            throw new NotImplementedException();
+            return db.Tags;
         }
 
         public Tag GetById(int id)

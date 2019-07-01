@@ -4,14 +4,16 @@ using GardenBlog;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GardenBlog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    partial class BlogContextModelSnapshot : ModelSnapshot
+    [Migration("20190701034104_newest")]
+    partial class newest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,9 +66,9 @@ namespace GardenBlog.Migrations
                     b.ToTable("Posts");
 
                     b.HasData(
-                        new { PostId = 1, Author = "Blair", Body = "This was so scary, it's scary", CategoryId = 1, TimeStamp = new DateTime(2019, 7, 1, 0, 51, 7, 148, DateTimeKind.Local), Title = "Horror" },
-                        new { PostId = 2, Author = "Bridget", Body = "Soooo funny", CategoryId = 1, TimeStamp = new DateTime(2019, 7, 1, 0, 51, 7, 150, DateTimeKind.Local), Title = "Comedy" },
-                        new { PostId = 3, Author = "Travis", Body = "Kinda Creepy", CategoryId = 2, TimeStamp = new DateTime(2019, 7, 1, 0, 51, 7, 150, DateTimeKind.Local), Title = "Horror" }
+                        new { PostId = 1, Author = "Blair", Body = "This was so scary, it's scary", CategoryId = 1, TimeStamp = new DateTime(2019, 6, 30, 23, 41, 3, 944, DateTimeKind.Local), Title = "Horror" },
+                        new { PostId = 2, Author = "Bridget", Body = "Soooo funny", CategoryId = 1, TimeStamp = new DateTime(2019, 6, 30, 23, 41, 3, 946, DateTimeKind.Local), Title = "Comedy" },
+                        new { PostId = 3, Author = "Travis", Body = "Kinda Creepy", CategoryId = 2, TimeStamp = new DateTime(2019, 6, 30, 23, 41, 3, 946, DateTimeKind.Local), Title = "Horror" }
                     );
                 });
 
