@@ -13,12 +13,9 @@
     </div>
 </div>
 
-
-<div id="category">
     @foreach (var item in Model)
     {
-        <div id="cat">
-            <a href="/Category/Details/@item.CategoryId"><h3>@item.CategoryName</h3></a>
+        <div id="category">
+            <a href="/Category/Details/@item.CategoryId" class="catbutton"><h3>@item.CategoryName</h3></a>
         </div>
     }
-</div>

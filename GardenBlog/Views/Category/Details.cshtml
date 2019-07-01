@@ -6,11 +6,11 @@
     Layout = "_layout";
 }
 
-    <div>
-        <h4>@Model.CategoryName</h4>
+    <div id="details">
+        <h2>@Model.CategoryName Plants</h2>
         <hr />
     </div>
-    <a href="/Post/Create/@Model.CategoryId" class="createblog">Write New Post For @Model.CategoryName</a>
+    <a href="/Post/Create/@Model.CategoryId" class="button">Write New Post For an @Model.CategoryName plant</a>
 
     <div id="index">
         @foreach (var post in Model.PostList)

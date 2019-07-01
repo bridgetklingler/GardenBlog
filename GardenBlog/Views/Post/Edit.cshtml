@@ -6,46 +6,49 @@
 }
 @addTagHelper * ,Microsoft.AspNetCore.Mvc.TagHelpers
 
-<h2>Edit</h2>
 
-<h4>Blog Post</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="PostId" value="@Model.PostId" />
-            <div class="form-group">
-                <label asp-for="Title" class="control-label">Title: </label>
-                <input asp-for="Title" class="form-control" value="@Model.Title"/>
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Author" class="control-label">Author: </label>
-                <input asp-for="Author" class="form-control"value="@Model.Author" />
-                <span asp-validation-for="Author" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Body" class="control-label">Post Content: </label>
-                <textarea asp-for="Body" class="form-control" style="width: 300px; height: 150px;" >
+<div class="title">
+
+    <h2>Edit Blog Post</h2>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="PostId" value="@Model.PostId" />
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label">Title: </label>
+                    <input asp-for="Title" class="form-control" value="@Model.Title" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Author" class="control-label">Author: </label>
+                    <input asp-for="Author" class="form-control" value="@Model.Author" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Body" class="control-label">Post Content: </label>
+                    <textarea asp-for="Body" class="form-control" style="width: 300px; height: 150px;">
                 </textarea>
-                <span asp-validation-for="Body" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="TimeStamp" class="form-control" type="hidden" value="@Model.TimeStamp"/>
-                <span asp-validation-for="TimeStamp" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="CategoryId" type="hidden" value="@Model.CategoryId" class="form-control" />
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </form>
+                    <span asp-validation-for="Body" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="TimeStamp" class="form-control" type="hidden" value="@Model.TimeStamp" />
+                    <span asp-validation-for="TimeStamp" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="CategoryId" type="hidden" value="@Model.CategoryId" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="button" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+    </div>
 
-<div>
-    <a asp-action="Post/Index">Back to List</a>
-</div>
+    <div class="return">
+        <a asp-action="Index" class="button">Back to Post List</a>
+    </div>
 
