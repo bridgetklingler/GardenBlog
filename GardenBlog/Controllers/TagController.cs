@@ -37,11 +37,11 @@ namespace GardenBlog.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public ActionResult AddTags(PostTag postTag)
-        {
+        //[HttpPost]
+        //public ActionResult AddTags(PostTag postTag)
+        //{
             
-        }
+        //}
 
     }
 }

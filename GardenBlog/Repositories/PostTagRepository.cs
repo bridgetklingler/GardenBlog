@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GardenBlog.Repositories
 {
-    public class PostTagRepository : IRepository<Post>
+    public class PostTagRepository : IRepository<PostTag>
     {
         private BlogContext db;
 
@@ -20,22 +20,22 @@ namespace GardenBlog.Repositories
             throw new NotImplementedException();
         }
 
-        public void Delete(Post obj)
+        public void Delete(PostTag obj)
         {
             throw new NotImplementedException();
         }
 
-        public void Edit(Post obj)
+        public void Edit(PostTag obj)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Post> GetAll()
+        public IEnumerable<PostTag> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public Post GetById(int id)
+        public PostTag GetById(int id)
         {
             throw new NotImplementedException();
         }
