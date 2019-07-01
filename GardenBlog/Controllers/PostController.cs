@@ -83,7 +83,7 @@ namespace GardenBlog
         {
             postRepo.Edit(post);
 
-            return RedirectToAction("../Category/Details/" +post.CategoryId);
+            return RedirectToAction("../Tag/AddTags/" +post.PostId);
         }
     }
 }

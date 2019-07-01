@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<GardenBlog.Models.Tag>
+@addTagHelper * ,Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "AddTags";
     Layout = "_layout";
@@ -9,7 +10,7 @@
 </div>
 
 <div>
-        @*@Html.DropDownList("Tags",(@Model),new
-        { onchange="document.location.href='/Post/Index?value='+this.value"})*@
+    @Html.DropDownList("Tags",null,new
+        { onchange="document.location.href='/Post/Index?value='+this.value"})
 </div>
 
