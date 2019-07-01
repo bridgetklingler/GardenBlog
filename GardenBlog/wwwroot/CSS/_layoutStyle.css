@@ -7,6 +7,7 @@ body {
     background-image: url("/Images/white-lilies.png");
     background-size: cover;
     min-height: 800px;
+    padding-bottom: 2.5em;
 }
 
 footer, i {
@@ -114,6 +115,16 @@ h2 {
     padding: 1em;
 }
 
+#index{
+    padding-top: 1.7em;
+}
+
+#post li{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+}
+
 #index h3, #index span, #index p{
     color: black;
     background-color: antiquewhite;
@@ -151,4 +162,8 @@ form-group {
 
 content{
     background-color: antiquewhite;
+}
+
+endpage{
+    padding-bottom: 1.5em;
 }

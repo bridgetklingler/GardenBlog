@@ -64,9 +64,13 @@ namespace GardenBlog.Migrations
                     b.ToTable("Posts");
 
                     b.HasData(
-                        new { PostId = 1, Author = "Blair", Body = "This was so scary, it's scary", CategoryId = 1, TimeStamp = new DateTime(2019, 7, 1, 0, 51, 7, 148, DateTimeKind.Local), Title = "Horror" },
-                        new { PostId = 2, Author = "Bridget", Body = "Soooo funny", CategoryId = 1, TimeStamp = new DateTime(2019, 7, 1, 0, 51, 7, 150, DateTimeKind.Local), Title = "Comedy" },
-                        new { PostId = 3, Author = "Travis", Body = "Kinda Creepy", CategoryId = 2, TimeStamp = new DateTime(2019, 7, 1, 0, 51, 7, 150, DateTimeKind.Local), Title = "Horror" }
+                        new { PostId = 1, Author = "Blair", Body = "I've found that the spider plant is the most effective at cleaning the air in my home. As someone with asthma, I can attest that this plant has done wonders for my breathing!", CategoryId = 1, TimeStamp = new DateTime(2019, 7, 1, 3, 0, 48, 382, DateTimeKind.Local), Title = "Spider Plant" },
+                        new { PostId = 2, Author = "Bridget", Body = "I know this plant is easy to care for inside, but does anyone else have an issue with the ivy climbing on every other plant within a 5 mile radius? Asking for a friend...", CategoryId = 1, TimeStamp = new DateTime(2019, 7, 1, 3, 0, 48, 383, DateTimeKind.Local), Title = "English Ivy" },
+                        new { PostId = 3, Author = "Kyle", Body = "I just planted a burning bush off my back porch and the leaves all fell off within the week. Is it dead or just didn't take the transplant well?", CategoryId = 1, TimeStamp = new DateTime(2019, 7, 1, 3, 0, 48, 383, DateTimeKind.Local), Title = "Burning Bush" },
+                        new { PostId = 4, Author = "Elise", Body = "Last year I planted 4 asiatic lily plants and after my dog dug them up on multiple occassions, I just assumed they were dead. But this year, I have 9 plants growing! I'm so excited!", CategoryId = 2, TimeStamp = new DateTime(2019, 7, 1, 3, 0, 48, 383, DateTimeKind.Local), Title = "Asiatic Lilies" },
+                        new { PostId = 5, Author = "Peter", Body = "I have a little bird bath fountain that I just put lily pads in. Now I have a couple peepers and the birds seem to not be using it anymore. Do you think the frogs scared them away? Or are birds scared of lily pads and I just didn't know about it?", CategoryId = 2, TimeStamp = new DateTime(2019, 7, 1, 3, 0, 48, 383, DateTimeKind.Local), Title = "Lily Pads" },
+                        new { PostId = 6, Author = "Miranda", Body = "I just came across this entire acre field that plants sunflowers every year outside of Avon. It's so gorgeous, you have to check it out! It's so bright and yellow, and such a fun walk thorugh the field, it's a must do in the 2 weeks they're in full bloom!", CategoryId = 1, TimeStamp = new DateTime(2019, 7, 1, 3, 0, 48, 383, DateTimeKind.Local), Title = "Sunflowers" },
+                        new { PostId = 7, Author = "Travis", Body = "Black mulch beware!! I've found that the black mulch actually has overheated my softer plants. Just make sure to keep a good eye out on your plants after laying mulch. The black mulch tends to fade rather quickly, so the first 2 weeks are key.", CategoryId = 2, TimeStamp = new DateTime(2019, 7, 1, 3, 0, 48, 383, DateTimeKind.Local), Title = "Mulch" }
                     );
                 });
 
@@ -102,8 +106,14 @@ namespace GardenBlog.Migrations
                     b.ToTable("Tags");
 
                     b.HasData(
-                        new { TagId = 1, TagName = "funny" },
-                        new { TagId = 2, TagName = "scary" }
+                        new { TagId = 1, TagName = "mulch" },
+                        new { TagId = 2, TagName = "ivy" },
+                        new { TagId = 3, TagName = "orange" },
+                        new { TagId = 4, TagName = "colorful" },
+                        new { TagId = 5, TagName = "high-maintenance" },
+                        new { TagId = 6, TagName = "easy-watering" },
+                        new { TagId = 7, TagName = "direct-sun" },
+                        new { TagId = 8, TagName = "low-maintenance" }
                     );
                 });
 

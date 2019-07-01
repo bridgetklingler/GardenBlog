@@ -5,15 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20190628152306_SecondMigration.cs" />
-    <Compile Remove="Migrations\20190628152306_SecondMigration.Designer.cs" />
-    <Compile Remove="Migrations\20190629203340_ChangedPostCategoryIdToInt.cs" />
-    <Compile Remove="Migrations\20190629203340_ChangedPostCategoryIdToInt.Designer.cs" />
-    <Compile Remove="Migrations\20190629203715_AddedCategoryIdFKtoPost.cs" />
-    <Compile Remove="Migrations\20190629203715_AddedCategoryIdFKtoPost.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="wwwroot\Images\" />
 
   </ItemGroup>
