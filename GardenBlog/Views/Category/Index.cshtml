@@ -5,9 +5,20 @@
     Layout = "_layout";
 }
 
-@foreach (var item in Model)
-{
-<div id="category">
-    <a href="/Category/Details/@item.CategoryId"><h3>@item.CategoryName</h3></a>
+<div id="welcome">
+    <div id="wel">
+        <h2>Welcome to B&B's Garden Blog</h2>
+        <h3>A place to share all your gardening secrets to help even the most amateur gardener become a true green thumb.</h3>
+        <h4>Please choose what type of plants you would like to make a post for</h4>
+    </div>
 </div>
-}
+
+
+<div id="category">
+    @foreach (var item in Model)
+    {
+        <div id="cat">
+            <a href="/Category/Details/@item.CategoryId"><h3>@item.CategoryName</h3></a>
+        </div>
+    }
+</div>
