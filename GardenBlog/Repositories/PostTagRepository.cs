@@ -15,7 +15,7 @@ namespace GardenBlog.Repositories
             this.db = db;
         }
 
-        public void Create(Post obj)
+        public void Create(PostTag obj)
         {
             throw new NotImplementedException();
         }

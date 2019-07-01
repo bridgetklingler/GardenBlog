@@ -17,16 +17,30 @@ namespace GardenBlog.Controllers
             this.tagRepos = tagRepos;
         }
 
-        public ViewResult TagIndex()
+        public ViewResult Index()
         {
             var model = tagRepos.GetAll();
             return View(model);
         }
 
-        public ActionResult SingleTag(int id)
+        public ActionResult Details(int id)
         {
             var model = tagRepos.GetById(id);
             return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult AddTags(int id)
+        {
+            ViewBag.PostId = id;
+            var model = tagRepos.GetAll();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult AddTags(PostTag postTag)
+        {
+            
         }
 
     }

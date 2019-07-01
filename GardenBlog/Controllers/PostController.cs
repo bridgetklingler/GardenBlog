@@ -48,7 +48,7 @@ namespace GardenBlog
         {
             postRepo.Create(post);
 
-            return RedirectToAction("../Category/Index/" + post.CategoryId);
+            return RedirectToAction("../Tag/AddTags/" + post.PostId);
         }
 
 
